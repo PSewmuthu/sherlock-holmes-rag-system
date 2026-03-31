@@ -40,13 +40,7 @@ The system follows a modern AI workflow to transform web-based literature into a
     cd sherlock-holmes-rag-system
     ```
 
-2.  **Install Dependencies**:
-
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-3.  **Start the Detective**:
+2.  **Start the Detective**:
     ```bash
     uv run fastapi run main.py
     ```
