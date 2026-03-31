@@ -18,6 +18,8 @@ def load_llm():
 
 def load_embeddings():
     embeddings = GoogleGenerativeAIEmbeddings(
-        model="gemini-embedding-2-preview")
+        model="gemini-embedding-2-preview",
+        max_retries=1
+    )
 
     return embeddings

@@ -1,6 +1,9 @@
 from langchain_community.document_loaders import RecursiveUrlLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from bs4 import BeautifulSoup
+import warnings
+
+warnings.filterwarnings("ignore")
 
 
 def load_data(url):
