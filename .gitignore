@@ -12,6 +12,9 @@ wheels/
 # Visual Studio Code settings
 .vscode/
 
+# Streamlit secrets
+.streamlit/
+
 # Vector database files
 db/
 

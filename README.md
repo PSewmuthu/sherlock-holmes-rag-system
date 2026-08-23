@@ -138,6 +138,7 @@ Generated Answer
 | Embeddings           | HuggingFace embeddings          |
 | Vector Search        | Chroma Vector database          |
 | Web Scraping         | BeautifulSoup                   |
+| Frontend UI          | Streamlit                       |
 
 ---
 
@@ -152,7 +153,9 @@ Generated Answer
     cd sherlock-holmes-rag-system
     ```
 
-2.  **Configure environment variables**
+2.  **Configure Environment Variables & Secrets**
+
+    Copy the example environment file and add your Google AI Studio key:
 
     ```bash
     cp .env.example .env
@@ -160,11 +163,41 @@ Generated Answer
 
     Then collect your API key from [Google AI Studio](https://aistudio.google.com/api-keys) and update the .env file.
 
+    ```bash
+    GEMINI_API_KEY=your_google_ai_studio_key_here
+    ```
+
+    _(Optional)_ Configure local Streamlit Secrets:
+
+    Create a .streamlit folder and add a secrets.toml file to specify your local or cloud API URL:
+
+    ```bash
+    mkdir .streamlit
+    ```
+
+    Add the following content to .streamlit/secrets.toml:
+
+    ```bash
+    API_BASE_URL="http://localhost:8000"
+    ```
+
 3.  **Start the Detective**:
+
+    Running both the backend API and the frontend UI requires opening two separate terminal windows.
+
+    Terminal 1: Start the FastAPI Backend
+
     ```bash
     uv run fastapi run main.py
     ```
+
     _Note: For the first run, it will take some time to download the embedding model and setup the vector database._
+
+    Terminal 2: Start the Streamlit Frontend
+
+    ```bash
+    uv run streamlit run streamlit_app.py
+    ```
 
 ## 📖 Example Queries
 

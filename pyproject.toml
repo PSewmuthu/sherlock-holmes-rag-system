@@ -13,4 +13,5 @@ dependencies = [
     "langchain-google-genai>=4.2.1",
     "langchain-huggingface>=1.2.2",
     "sentence-transformers>=6.0.0",
+    "streamlit>=1.62.0",
 ]
