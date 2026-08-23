@@ -12,5 +12,8 @@ wheels/
 # Visual Studio Code settings
 .vscode/
 
+# Vector database files
+db/
+
 # Environment variables file
 .env

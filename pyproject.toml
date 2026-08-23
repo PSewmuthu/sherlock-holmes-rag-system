@@ -1,7 +1,7 @@
 [project]
 name = "sherlock-holmes-rag-system"
 version = "0.1.0"
-description = "Add your description here"
+description = "An API that provides detailed, context-aware answers about Sherlock Holmes stories using a Retrieval-Augmented Generation (RAG) approach."
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
@@ -11,4 +11,6 @@ dependencies = [
     "langchain-chroma>=1.1.0",
     "langchain-community>=0.4.1",
     "langchain-google-genai>=4.2.1",
+    "langchain-huggingface>=1.2.2",
+    "sentence-transformers>=6.0.0",
 ]

@@ -78,6 +78,7 @@ Request:
 
 ```json
 {
+	"session_id": "your session id from /api/get_session_id",
 	"question": "Who is Professor Moriarty?"
 }
 ```
@@ -134,7 +135,7 @@ Generated Answer
 | LLM                  | Gemini                          |
 | Programming Language | Python                          |
 | Data Source          | Arthur Conan Doyle Encyclopedia |
-| Embeddings           | Gemini embeddings               |
+| Embeddings           | HuggingFace embeddings          |
 | Vector Search        | Chroma Vector database          |
 | Web Scraping         | BeautifulSoup                   |
 
@@ -163,6 +164,7 @@ Generated Answer
     ```bash
     uv run fastapi run main.py
     ```
+    _Note: For the first run, it will take some time to download the embedding model and setup the vector database._
 
 ## 📖 Example Queries
 
