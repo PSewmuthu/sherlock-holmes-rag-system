@@ -1,7 +1,27 @@
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 
 
-def load_prompt():
+def load_contextualize_prompt() -> ChatPromptTemplate:
+    """Prompt for history-aware retriever to reframe questions without answering them."""
+    contextualize_system_prompt = (
+        "Given a chat history and the latest user question "
+        "which might reference context in the chat history, "
+        "formulate a standalone question which can be understood "
+        "without the chat history. Do NOT answer the question, "
+        "just reformulate it if needed and otherwise return it as is."
+    )
+
+    return ChatPromptTemplate.from_messages(
+        [
+            ("system", contextualize_system_prompt),
+            MessagesPlaceholder("chat_history"),
+            ("human", "{input}"),
+        ]
+    )
+
+
+def load_qa_prompt() -> ChatPromptTemplate:
+    """Prompt for document combination chain using retrieved context."""
     system_prompt = (
         "### ROLE: Specialized Sherlock Holmes Research Assistant\n"
         "You are an expert literary analyst and archivist specialized in the 'Sherlock Holmes' canon. "
@@ -26,12 +46,10 @@ def load_prompt():
         "{context}\n"
     )
 
-    prompt = ChatPromptTemplate.from_messages(
+    return ChatPromptTemplate.from_messages(
         [
             ("system", system_prompt),
             MessagesPlaceholder("chat_history"),
-            ("human", "{input}")
+            ("human", "{input}"),
         ]
     )
-
-    return prompt
