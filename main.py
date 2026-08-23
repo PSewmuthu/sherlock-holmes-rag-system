@@ -1,6 +1,6 @@
 from fastapi import FastAPI, HTTPException, status
-from chain import chain_init
-from logger import logging
+from src.chain import chain_init
+from src.logger import logging
 
 app = FastAPI(
     title="Sherlock Holmes RAG API",

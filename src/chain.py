@@ -5,9 +5,9 @@ from langchain_classic.chains import create_history_aware_retriever
 from langchain_core.runnables.history import RunnableWithMessageHistory
 from langchain_community.chat_message_histories import ChatMessageHistory
 from langchain_classic.chains.combine_documents import create_stuff_documents_chain
-from llm import load_llm, load_embeddings
-from data import load_data, split_docs
-from prompt import load_prompt
+from .llm import load_llm, load_embeddings
+from .data import load_data, split_docs
+from .prompt import load_prompt
 
 store = {}  # Store for session histories, keyed by session_id
 
