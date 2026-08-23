@@ -137,3 +137,35 @@ Generated Answer
 | Embeddings           | Gemini embeddings               |
 | Vector Search        | Chroma Vector database          |
 | Web Scraping         | BeautifulSoup                   |
+
+---
+
+## 🏁 Getting Started
+
+### Installation
+
+1.  **Clone the Repository**:
+
+    ```bash
+    git clone https://github.com/pasindusewmuthu/sherlock-holmes-rag-system.git
+    cd sherlock-holmes-rag-system
+    ```
+
+2.  **Configure environment variables**
+
+    ```bash
+    cp .env.example .env
+    ```
+
+    Then collect your API key from [Google AI Studio](https://aistudio.google.com/api-keys) and update the .env file.
+
+3.  **Start the Detective**:
+    ```bash
+    uv run fastapi run main.py
+    ```
+
+## 📖 Example Queries
+
+- _"What were the three distinctive features of the client in 'The Red-Headed League'?"_
+- _"Compare the military background of Dr. Watson across different stories."_
+- _"List all cases where Sherlock Holmes was forced to break the law to solve the mystery."_
