@@ -3,7 +3,7 @@ name = "sherlock-holmes-rag-system"
 version = "0.1.0"
 description = "An API that provides detailed, context-aware answers about Sherlock Holmes stories using a Retrieval-Augmented Generation (RAG) approach."
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.13"
 dependencies = [
     "bs4>=0.0.2",
     "fastapi[standard]>=0.135.2",
